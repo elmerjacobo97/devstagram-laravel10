@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slideIn {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.mobile-menu.slide-in {
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.mobile-menu.slide-out {
+    animation: slideOut 0.5s ease-in-out forwards;
+}
