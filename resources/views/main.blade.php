@@ -11,7 +11,7 @@
                 <a href="/" class="text-2xl font-semibold">
                     DevStagram
                 </a>
-                <p class="text-sm">&copy; {{ now()->year }} <DevStagram></DevStagram>. Todos los derechos reservados.</p>
+                <p class="text-sm">&copy; {{ now()->year }} DevStagram. Todos los derechos reservados.</p>
             </div>
         </footer>
     </div>
