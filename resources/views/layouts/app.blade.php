@@ -33,7 +33,7 @@
             <!-- Navigation Menu for large screens -->
             <div class="hidden md:flex space-x-4">
                 <a href="/login" class="text-white hover:text-gray-400">Inicia sesión</a>
-                <a href="/register" class="text-white hover:text-gray-400">Crea una cuenta</a>
+                <a href="{{ route('register.index') }}" class="text-white hover:text-gray-400">Crea una cuenta</a>
             </div>
 
             <!-- Hamburger button for small screens -->
@@ -49,7 +49,7 @@
         <!-- Mobile Sidebar Menu -->
         <div id="menu" class="mobile-menu hidden md:hidden fixed inset-y-0 left-0 transform -translate-x-full bg-gray-700 w-64 overflow-y-auto transition-transform duration-1000 ease-in-out">
             <a href="/login" class="block py-2 px-4 text-white hover:bg-gray-600">Inicia sesión</a>
-            <a href="/register" class="block py-2 px-4 text-white hover:bg-gray-600">Crea una cuenta</a>
+            <a href="{{ route('register.index') }}" class="block py-2 px-4 text-white hover:bg-gray-600">Crea una cuenta</a>
         </div>
     </div>
 
