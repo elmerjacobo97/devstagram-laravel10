@@ -39,7 +39,7 @@
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-600 mb-2">Password</label>
-                        <input type="password" name="password" placeholder="Ingrese su contraseña" value="{{ old('password') }}"
+                        <input type="password" name="password" placeholder="Ingrese su contraseña"
                                class="mt-1 block w-full px-3 py-2 bg-white border {{ $errors->has('password') ? 'border-red-500' : 'border-slate-300' }} rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"/>
                         @error('password')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -48,7 +48,7 @@
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-600 mb-2">Confirmar Password</label>
-                        <input type="password" name="password_confirmation" placeholder="Confirme su contraseña" value="{{ old('password') }}"
+                        <input type="password" name="password_confirmation" placeholder="Confirme su contraseña"
                                class="mt-1 block w-full px-3 py-2 bg-white border {{ $errors->has('password') ? 'border-red-500' : 'border-slate-300' }} rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"/>
                         @error('password')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
