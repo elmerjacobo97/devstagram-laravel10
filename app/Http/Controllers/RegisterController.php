@@ -58,7 +58,7 @@ class RegisterController extends Controller
         ]);
 
         // Crear el usuario
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
@@ -74,10 +74,29 @@ class RegisterController extends Controller
         // $user->password = Hash::make($request->input('password'));
         // $user->save();
 
+        // Autenticar al usuario
+        // Auth::login($user);
+
+        // Otra forma de autenticar al usuario
+    //    if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
+    //        // Autenticación exitosa, redirigir al destino deseado
+    //        return redirect()->route('posts.index');
+    //    } else {
+    //        // Autenticación fallida, redirigir de nuevo al formulario de inicio de sesión con un mensaje de error
+    //        return back()->withErrors(['email' => 'Las credenciales proporcionadas no coinciden con nuestros registros.']);
+    //    }
+
+        // Otra forma de autenticar al usuario
+        if (auth()->attempt(request()->only('email', 'password'))) {
+            // Autenticación exitosa, redirigir al usuario
+            return redirect()->route('profile.index');
+        } else {
+            // Autenticación fallida, redirigir de nuevo con un mensaje de error
+            return back()->withErrors(['email' => 'Las credenciales proporcionadas no coinciden con nuestros registros.']);
+        }
+
         // Redirecciona a donde quieras después del registro
-        return redirect()->route('posts.index');
-
-
+        // return redirect()->route('posts.index');
     }
 
     /**

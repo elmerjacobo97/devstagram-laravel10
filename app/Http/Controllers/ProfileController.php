@@ -4,14 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class ProfileController extends Controller
 {
+    // Proteger el controlador, requiere autenticación
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        dd('Desde el controlador PostController');
+        return  view('dashboard');
     }
 
     /**

@@ -5,13 +5,6 @@ module.exports = {
         "./resources/**/*.js",
         "./resources/**/*.vue",
     ],
-    theme: {
-        extend: {
-            fontFamily: {
-                'figtree': ['"Figtree"', 'serif'],
-                'alexandria': ['"Alexandria"', 'sans-serif'],
-            },
-        },
-    },
+    theme: {},
     plugins: [],
-}
+};
