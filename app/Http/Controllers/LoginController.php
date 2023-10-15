@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
+
 {
     /**
      * Display a listing of the resource.
@@ -27,8 +28,10 @@ class LoginController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+
+     public function store(Request $request)
     {
+        
         
         // Validar los datos
         $this->validate($request, [
@@ -48,10 +51,15 @@ class LoginController extends Controller
             return back()->withErrors(['password' => 'Tu contraseña es incorrecta.']);
         }
 
+        // Verifica si el checkbox "Recuérdame" está marcado
+        $remember = $request->has('remember');
+
         // Comprobar si las credenciales son correctas
-        if (auth()->attempt($request->only('email', 'password'))) {
-            return redirect()->route('profile.index');
-        } 
+       if (auth()->attempt($request->only('email', 'password'), $remember)) {
+            // Obtiene el usuario autenticado
+            $loggedInUser = auth()->user();
+            return redirect()->route('profile.index', $loggedInUser->username);
+        }
 
         // Otros errores
         return back()->withErrors(['messageError' => 'Las credenciales no son correctas']);

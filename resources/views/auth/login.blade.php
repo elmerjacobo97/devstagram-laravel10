@@ -27,6 +27,14 @@
               <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
             @enderror
           </div>
+
+          <!-- Checkbox Recuérdame -->
+          <div class="flex items-center mb-4">
+            <input type="checkbox" name="remember" id="remember"
+              class="mr-2 rounded text-sky-500 border-slate-300 focus:ring-sky-500 focus:border-sky-500" />
+            <label for="remember" class="text-sm text-gray-600">Recuérdame</label>
+          </div>
+
           @if ($errors->has('messageError'))
             <div class="text-red-500">
               {{ $errors->first('messageError') }}
